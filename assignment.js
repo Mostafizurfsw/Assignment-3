@@ -14,7 +14,6 @@ function kilometerToMeter(kilometer){
 }
 
 
-
 //**   budgetCalculator */
 
 // Number of gadgets
@@ -33,6 +32,9 @@ function budgetCalculator(watchPrice, phonePrice, laptopPrice){
   if(watchNumber <= -1 || phoneNumber <= -1 || laptopNumber <= -1){
     console.log('This value can not be negative.')
   }
+  else if(typeof watchNumber !="number"){
+    console.log('Please insert a number.')
+    }
   else{
     return result;
   }
@@ -71,11 +73,17 @@ function megaFriend() {
   let count = 0;
   
   for (let i = 0; i < megaFriendList.length; i++){
-      if(megaFriendList[i].length > count){
-      let count = megaFriendList[i].length;
-      longest = megaFriendList[i];
+    if(megaFriendList[i].length > count){
+    let count = megaFriendList[i].length;
+    longest = megaFriendList[i];
+    }
+    else if(typeof megaFriendList !="string"){
+      console.log('Please recheck')
+      }
+    else{
+      return longest;
     }
   }
-
+  
   return longest;
   }
